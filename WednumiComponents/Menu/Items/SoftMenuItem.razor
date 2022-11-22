@@ -1,0 +1,30 @@
+﻿@if (ChildContent is not null)
+{
+    <div @attributes="InputAttributes" style="--bg-color : @BackgroundColor; --hover-color: @HoverColor; @Style">
+        @ChildContent
+    </div>
+}
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
+
+    [Parameter]
+    public string? BackgroundColor { get; set; }
+
+    [Parameter]
+    public string? HoverColor { get; set; }
+
+    private object? Style {
+        get{
+            var style = InputAttributes.ContainsKey("style")
+                ? InputAttributes["style"]
+                : null;
+            return style;
+        }
+    }
+}
+
