@@ -10,15 +10,13 @@
     @if (Content is not null)
     {
         <div class="@Visivility dropdown-content" style="right: @RightCss">
-            <FloatingContainer InputAttributes=@InputAttributes>
-                @Content
-            </FloatingContainer>
+            @Content
         </div>
     }
 </div>
 
 @code {
-    private string Visivility = "";
+    protected string Visivility = "";
 
     [Parameter]
     public RenderFragment? Head { get; set; }
@@ -29,10 +27,7 @@
     [Parameter]
     public string? Alignment { get; set; }
 
-    [Parameter(CaptureUnmatchedValues = true)]
-    public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
-
-    private int RightCss
+    protected int RightCss
     {
         get
         {
@@ -43,7 +38,7 @@
         }
     }
 
-    private void HeadClick()
+    protected void HeadClick()
     {
         Visivility = Visivility == ""
             ? "clicked-content"

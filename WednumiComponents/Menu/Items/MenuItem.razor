@@ -12,13 +12,13 @@
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
 
-    [Parameter]
+    [CascadingParameter(Name = "BackgroundColor")]
     public string? BackgroundColor { get; set; }
 
-    [Parameter]
+    [CascadingParameter(Name = "HoverColor")]
     public string? HoverColor { get; set; }
 
-    private object? Style {
+    protected object? Style {
         get{
             var style = InputAttributes.ContainsKey("style")
                 ? InputAttributes["style"]

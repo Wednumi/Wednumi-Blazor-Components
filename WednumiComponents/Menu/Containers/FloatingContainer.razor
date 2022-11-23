@@ -1,4 +1,4 @@
-﻿<div @attributes="InputAttributes">
+﻿<div @attributes="InputAttributes" style="background-color: @BackgroundColor; @Style">
     @ChildContent
 </div>
 
@@ -6,6 +6,20 @@
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 
+    [Parameter]
+    public string? BackgroundColor { get; set; }
+
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
+
+    protected object? Style
+    {
+        get
+        {
+            var style = InputAttributes.ContainsKey("style")
+                ? InputAttributes["style"]
+                : null;
+            return style;
+        }
+    }
 }
