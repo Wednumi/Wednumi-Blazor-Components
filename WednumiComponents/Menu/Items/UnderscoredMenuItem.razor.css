@@ -1,8 +1,8 @@
 ﻿div {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
     display: block;
-    background-color: var(--bg-color);
+    background-color: transparent;
     cursor: pointer;
     margin: 0.25rem;
     padding: 0.25rem;

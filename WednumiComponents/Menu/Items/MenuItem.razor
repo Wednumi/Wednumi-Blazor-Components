@@ -1,6 +1,15 @@
 ﻿@if (ChildContent is not null)
 {
-    <div @attributes="InputAttributes" style="--bg-color : @BackgroundColor; --hover-color: @HoverColor; @Style">
+    <div @attributes="InputAttributes" 
+        style="
+            --bg-color : @BackgroundColor;
+            --hover-color: @HoverColor;
+            color: @TextColor; 
+            @GeneralStyle; 
+            @IndividualStyle"
+        class="
+            @GeneralClass
+            @IndividualClass">
         @ChildContent
     </div>
 }
@@ -12,13 +21,34 @@
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
 
+    [Parameter]
     [CascadingParameter(Name = "BackgroundColor")]
     public string? BackgroundColor { get; set; }
 
     [CascadingParameter(Name = "HoverColor")]
     public string? HoverColor { get; set; }
 
-    protected object? Style {
+    [CascadingParameter(Name = "TextColor")]
+    public string? TextColor { get; set; }
+
+    [CascadingParameter(Name = "Class")]
+    public string? GeneralClass { get; set; }
+
+    protected object? IndividualClass
+    {
+        get
+        {
+            var invividualClass = InputAttributes.ContainsKey("class")
+                ? InputAttributes["class"]
+                : null;
+            return invividualClass;
+        }
+    }
+
+    [CascadingParameter(Name = "Style")]
+    public string? GeneralStyle { get; set; }
+
+    protected object? IndividualStyle {
         get{
             var style = InputAttributes.ContainsKey("style")
                 ? InputAttributes["style"]

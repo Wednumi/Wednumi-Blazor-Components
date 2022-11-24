@@ -27,7 +27,7 @@
     <div class="preview-container">
         <div class="example">
             <FloatingContainer BackgroundColor="gray"
-                               class="p-5 d-flex" style="border-radius: 10px">
+                class="p-5 d-flex" style="border-radius: 10px">
                 content
             </FloatingContainer>
         </div>
@@ -45,14 +45,14 @@
 <div class="row">
     <div class="preview-container">
         <div class="example">
-            <MenuContainer>
+            <MenuContainer class="d-flex" ItemHoverColor="blue">
                 <MenuItem>menu item1</MenuItem>
                 <MenuItem>menu item2</MenuItem>
                 <MenuItem>menu item3</MenuItem>
             </MenuContainer>
         </div>
         <pre>
-&lt;MenuContainer>
+&lt;MenuContainer class="d-flex" ItemHoverColor="blue">
     &lt;MenuItem>menu item1&lt;/MenuItem>
     &lt;MenuItem>menu item2&lt;/MenuItem>
     &lt;MenuItem>menu item3&lt;/MenuItem>
@@ -62,17 +62,31 @@
 
     <div class="preview-container">
         <div class="example">
-            <MenuContainer BackgroundColor="darkgray" ItemHoverColor="gray" class="rounded-2">
-                <MenuItem class="rounded-2">menu item1</MenuItem>
-                <MenuItem class="rounded-2">menu item2</MenuItem>
-                <MenuItem class="rounded-2">menu item3</MenuItem>
+            <MenuContainer 
+                    ItemBackgroundColor="blue"
+                    ItemHoverColor="gray"
+                    TextColor="white"
+                    ItemClass="rounded-3"
+                    ItemStyle="border: 3px solid black"
+                           class="rounded d-flex p-2"
+                    style="background-color:burlywood">
+                <MenuItem>menu item1</MenuItem>
+                <MenuItem>menu item2</MenuItem>
+                <MenuItem style="color:darkblue">menu item3</MenuItem>
             </MenuContainer>
         </div>
         <pre>
-&lt;MenuContainer BackgroundColor="darkgray" ItemHoverColor="gray" class="rounded-2">
-    &lt;MenuItem class="rounded-2">menu item1&lt;/MenuItem>
-    &lt;MenuItem class="rounded-2">menu item2&lt;/MenuItem>
-    &lt;MenuItem class="rounded-2">menu item3&lt;/MenuItem>
+&lt;MenuContainer 
+        ItemBackgroundColor="blue"
+        ItemHoverColor="gray"
+        TextColor="white"
+        ItemClass="rounded-3"
+        ItemStyle="border: 3px solid black"
+        class="rounded d-flex p-2"
+        style="background-color:burlywood">
+    &lt;MenuItem>menu item1&lt;/MenuItem>
+    &lt;MenuItem>menu item2&lt;/MenuItem>
+    &lt;MenuItem style="color:darkblue">menu item3&lt;/MenuItem>
 &lt;/MenuContainer>
         </pre>
     </div>
@@ -81,14 +95,14 @@
 <div class="row">
     <div class="preview-container">
         <div class="example">
-            <MenuContainer>
+            <MenuContainer class="d-flex" ItemHoverColor="red">
                 <UnderscoredMenuItem>menu item1</UnderscoredMenuItem>
                 <UnderscoredMenuItem>menu item2</UnderscoredMenuItem>
                 <UnderscoredMenuItem>menu item3</UnderscoredMenuItem>
             </MenuContainer>
         </div>
         <pre>
-&lt;MenuContainer>
+&lt;MenuContainer class="d-flex" ItemHoverColor="red">
     &lt;UnderscoredMenuItem>menu item1&lt;/UnderscoredMenuItem>
     &lt;UnderscoredMenuItem>menu item2&lt;/UnderscoredMenuItem>
     &lt;UnderscoredMenuItem>menu item3&lt;/UnderscoredMenuItem>
@@ -98,17 +112,29 @@
 
     <div class="preview-container">
         <div class="example">
-            <MenuContainer BackgroundColor="darkgray" ItemHoverColor="red">
+            <MenuContainer ItemBackgroundColor="blue"
+                           ItemHoverColor="gray"
+                           TextColor="white"
+                           ItemClass="rounded-3"
+                           ItemStyle="border: 3px solid black"
+                           class="rounded d-flex p-2"
+                           style="background-color:burlywood">
                 <UnderscoredMenuItem>menu item1</UnderscoredMenuItem>
                 <UnderscoredMenuItem>menu item2</UnderscoredMenuItem>
-                <UnderscoredMenuItem>menu item3</UnderscoredMenuItem>
+                <UnderscoredMenuItem style="background-color:darkblue">menu item3</UnderscoredMenuItem>
             </MenuContainer>
         </div>
         <pre>
-&lt;MenuContainer BackgroundColor="darkgray" ItemHoverColor="red">
+&lt;MenuContainer ItemBackgroundColor="blue"
+           ItemHoverColor="gray"
+           TextColor="white"
+           ItemClass="rounded-3"
+           ItemStyle="border: 3px solid black"
+           class="rounded d-flex p-2"
+           style="background-color:burlywood">
     &lt;UnderscoredMenuItem>menu item1&lt;/UnderscoredMenuItem>
     &lt;UnderscoredMenuItem>menu item2&lt;/UnderscoredMenuItem>
-    &lt;UnderscoredMenuItem>menu item3&lt;/UnderscoredMenuItem>
+    &lt;UnderscoredMenuItem style="background-color:darkblue">menu item3&lt;/UnderscoredMenuItem>
 &lt;/MenuContainer>
         </pre>
     </div>
@@ -147,11 +173,13 @@
                     <button class="btn btn-primary">Click button</button>
                 </Head>
                 <Content>
-                    <MenuContainer BackgroundColor="darkgray" ItemHoverColor="red">                        
-                        <UnderscoredMenuItem>list element list element</UnderscoredMenuItem>
-                        <UnderscoredMenuItem>list element list element</UnderscoredMenuItem>
-                        <UnderscoredMenuItem>list element list element</UnderscoredMenuItem>
-                    </MenuContainer>
+                    <FloatingContainer BackgroundColor="darkkhaki" class="rounded">
+                        <MenuContainer ItemHoverColor="blue">
+                            <UnderscoredMenuItem>list item1 list item1</UnderscoredMenuItem>
+                            <UnderscoredMenuItem>list item2 list item2</UnderscoredMenuItem>
+                            <UnderscoredMenuItem>list item3 list item3</UnderscoredMenuItem>
+                        </MenuContainer>
+                    </FloatingContainer>
                 </Content>
             </DropDown>
         </div>
@@ -161,11 +189,13 @@
         &lt;button class="btn btn-primary">Click button&lt;/button>
     &lt;/Head>
     &lt;Content>
-        &lt;MenuContainer BackgroundColor="darkgray" ItemHoverColor="red">                        
-            &lt;UnderscoredMenuItem>list element list element&lt;/UnderscoredMenuItem>
-            &lt;UnderscoredMenuItem>list element list element&lt;/UnderscoredMenuItem>
-            &lt;UnderscoredMenuItem>list element list element&lt;/UnderscoredMenuItem>
-        &lt;/MenuContainer>
+        &lt;FloatingContainer BackgroundColor="darkkhaki" class="rounded">
+            &lt;MenuContainer ItemHoverColor="blue">
+                &lt;UnderscoredMenuItem>list item1 list item1&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>list item2 list item2&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>list item3 list item3&lt;/UnderscoredMenuItem>
+            &lt;/MenuContainer>
+        &lt;/FloatingContainer>
     &lt;/Content>
 &lt;/DropDown>
         </pre>

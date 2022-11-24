@@ -2,7 +2,16 @@
 
 @if (ChildContent is not null)
 {
-    <div @attributes="InputAttributes" style="--bg-color : @BackgroundColor; --hover-color: @HoverColor; @Style">
+    <div @attributes="InputAttributes" 
+        style="
+            --text-color: @TextColor;
+            --hover-color: @HoverColor;
+            background-color: @BackgroundColor;
+            @GeneralStyle; 
+            @IndividualStyle"
+        class="
+            @GeneralClass
+            @IndividualClass">
         @ChildContent
     </div>
 }
