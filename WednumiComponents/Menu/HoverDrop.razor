@@ -1,0 +1,30 @@
+﻿@using WednumiComponents.Menu.Containers
+
+@inherits DropDown
+
+<div class="dropdown" @onclick="HeadClick" @onmouseover="Show" @onmouseout="Hide">
+    @if (Head is not null)
+    {
+        <div>
+            @Head
+        </div>
+    }
+    @if (Content is not null)
+    {
+        <div class="@Visivility dropdown-content" style="right: @RightCss">
+            @Content
+        </div>
+    }
+</div>
+
+@code {
+    protected void Show()
+    {
+        Visivility = "showed";
+    }
+
+    protected void Hide()
+    {
+        Visivility = "";
+    }
+}

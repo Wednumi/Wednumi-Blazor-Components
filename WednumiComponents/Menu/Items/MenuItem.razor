@@ -1,15 +1,19 @@
-﻿@if (ChildContent is not null)
+﻿@inject NavigationManager NavigationManager
+
+@if (ChildContent is not null)
 {
     <div @attributes="InputAttributes" 
         style="
             --bg-color : @BackgroundColor;
-            --hover-color: @HoverColor;
+            --hover-color: @CheckedHoverColor;
+            --hover-brightness: @Brightness;
             color: @TextColor; 
             @GeneralStyle; 
             @IndividualStyle"
         class="
             @GeneralClass
-            @IndividualClass">
+            @IndividualClass"
+        @onclick="NavigateIfLinkPassed">
         @ChildContent
     </div>
 }
@@ -55,6 +59,29 @@
                 : null;
             return style;
         }
+    }
+
+    protected string Brightness{
+        get{
+            if(HoverColor is null){
+                return "0.85";
+            }
+            else{
+                return "1";
+            }
+        }
+    }
+
+    protected string CheckedHoverColor{
+        get{
+            return HoverColor ?? BackgroundColor!;
+        }
+    }
+
+    protected void NavigateIfLinkPassed(){
+        if (InputAttributes.ContainsKey("href")){
+            NavigationManager.NavigateTo((string)InputAttributes["href"], true);
+        }            
     }
 }
 

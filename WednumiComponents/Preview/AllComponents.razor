@@ -45,14 +45,14 @@
 <div class="row">
     <div class="preview-container">
         <div class="example">
-            <MenuContainer class="d-flex" ItemHoverColor="blue">
+            <MenuContainer class="d-flex" ItemBackgroundColor="blue">
                 <MenuItem>menu item1</MenuItem>
                 <MenuItem>menu item2</MenuItem>
                 <MenuItem>menu item3</MenuItem>
             </MenuContainer>
         </div>
         <pre>
-&lt;MenuContainer class="d-flex" ItemHoverColor="blue">
+&lt;MenuContainer class="d-flex" ItemBackgroundColor="blue">
     &lt;MenuItem>menu item1&lt;/MenuItem>
     &lt;MenuItem>menu item2&lt;/MenuItem>
     &lt;MenuItem>menu item3&lt;/MenuItem>
@@ -198,6 +198,68 @@
         &lt;/FloatingContainer>
     &lt;/Content>
 &lt;/DropDown>
+        </pre>
+    </div>
+</div>
+
+<h5>HoverDown</h5>
+
+<div class="row">
+    <div class="preview-container">
+        <div class="example">
+            <HoverDrop>
+                <Head>
+                    MouseOver
+                </Head>
+                <Content>
+                    Content
+                </Content>
+            </HoverDrop>
+        </div>
+        <pre>
+&lt;HoverDrop>
+    &lt;Head>
+        MouseOver
+    &lt;/Head>
+    &lt;Content>
+        Content
+    &lt;/Content>
+&lt;/&lt;HoverDrop>
+        </pre>
+    </div>
+
+    <div class="preview-container">
+        <div class="example">
+            <HoverDrop Alignment="right">
+                <Head>
+                    <button class="btn btn-primary">MouseOver</button>
+                </Head>
+                <Content>
+                    <FloatingContainer BackgroundColor="darkkhaki" class="rounded m-1 me-0">
+                        <MenuContainer ItemHoverColor="blue">
+                            <UnderscoredMenuItem>list item1 list item1</UnderscoredMenuItem>
+                            <UnderscoredMenuItem>list item2 list item2</UnderscoredMenuItem>
+                            <UnderscoredMenuItem>list item3 list item3</UnderscoredMenuItem>
+                        </MenuContainer>
+                    </FloatingContainer>
+                </Content>
+            </HoverDrop>
+        </div>
+        <pre>
+&lt;HoverDrop Alignment="right">
+    &lt;Head>
+        &lt;button class="btn btn-primary">MouseOver&lt;/button>
+    &lt;/Head>
+    &lt;Content>
+        &lt;FloatingContainer BackgroundColor="darkkhaki" class="rounded m-1 me-0">
+            &lt;MenuContainer ItemHoverColor="blue">
+                &lt;UnderscoredMenuItem>list item1 list item1&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>list item2 list item2&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>list item3 list item3&lt;/UnderscoredMenuItem>
+            &lt;/MenuContainer>
+        &lt;/FloatingContainer>
+    &lt;/Content>
+&lt;/HoverDrop>
         </pre>
     </div>
 </div>
