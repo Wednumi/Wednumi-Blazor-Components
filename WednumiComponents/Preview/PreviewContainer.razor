@@ -1,0 +1,61 @@
+﻿@if (Name is not null)
+{
+    <div class="name">
+        @Name
+    </div>
+}
+@if (SubName is not null)
+{
+    <div class="name sub-name">
+        @SubName
+    </div>
+}
+<div class="container-fluid preview-container my-3">
+    @if (Example is not null)
+    {
+        <div>
+            @Example
+        </div>
+    }
+    <div class="d-flex flex-row justify-content-end">
+        @if (Razor is not null)
+        {
+            <div class="code code-razor">
+                <div class="language-label">
+                    .razor
+                </div>
+                <pre>
+                    @Razor
+                </pre>
+            </div>
+        }
+        @if (Css is not null)
+        {
+            <div class="code code-css">
+                <div class="language-label">
+                    .css
+                </div>
+                <pre>
+                    @Css
+                </pre>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment? Name { get; set; }
+
+    [Parameter]
+    public RenderFragment? SubName { get; set; }
+
+    [Parameter]
+    public RenderFragment? Example { get; set; }
+
+    [Parameter]
+    public RenderFragment? Razor { get; set; }
+
+    [Parameter]
+    public RenderFragment? Css { get; set; }
+}

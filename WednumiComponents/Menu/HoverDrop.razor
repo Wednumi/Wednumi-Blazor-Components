@@ -1,8 +1,6 @@
-﻿@using WednumiComponents.Menu.Containers
+﻿@inherits DropDown
 
-@inherits DropDown
-
-<div class="dropdown" @onclick="HeadClick" @onmouseover="Show" @onmouseout="Hide">
+<div class="dropdown" @onclick="ToggleVisibility" @onmouseover="Show" @onmouseout="Hide">
     @if (Head is not null)
     {
         <div>
@@ -11,7 +9,7 @@
     }
     @if (Content is not null)
     {
-        <div class="@Visivility dropdown-content" style="right: @RightCss">
+        <div class="@Visivility dropdown-content">
             @Content
         </div>
     }

@@ -1,266 +1,240 @@
 ﻿@using WednumiComponents.Menu
-@using WednumiComponents.Menu.Containers
 @using WednumiComponents.Menu.Items
 
-<h2>AllComponents</h2>
-<br />
-<br />
-<h4>Containers and items</h4>
-<br />
-
-<h5>FloatingContainer</h5>
-
-<div class="row">
-    <div class="preview-container">
-        <div class="example">
-            <FloatingContainer>
-                content
-            </FloatingContainer>
+<PreviewContainer>
+    <Name>MenuItem</Name>
+    <SubName>Color</SubName>
+    <Example>
+        <div class="menu-items1 d-flex flex-row">
+            <span class="some-menu-item1"><MenuItem>Item1</MenuItem></span>
+            <MenuItem>Item2</MenuItem>
+            <MenuItem>Item3</MenuItem>
+            <MenuItem>Item4</MenuItem>
         </div>
-        <pre>
-&lt;FloatingContainer>
-    content
-&lt;/FloatingContainer>
-        </pre>
-    </div>
+    </Example>
+    <Razor>
+&lt;div class="menu-items1 d-flex flex-row">
+    &lt;span class="some-menu-item1">&lt;MenuItem>Item1&lt;/MenuItem>&lt;/span>
+    &lt;MenuItem>Item2&lt;/MenuItem>
+    &lt;MenuItem>Item3&lt;/MenuItem>
+    &lt;MenuItem>Item4&lt;/MenuItem>
+&lt;/div>
+    </Razor>
+    <Css>
+.menu-items1 ::deep div {
+    border-radius: 0.25rem;
+    --bg-color: gray;
+    --hover-color: red;
+}
 
-    <div class="preview-container">
-        <div class="example">
-            <FloatingContainer BackgroundColor="gray"
-                class="p-5 d-flex" style="border-radius: 10px">
-                content
-            </FloatingContainer>
+.some-menu-item1 ::deep div{
+    --bg-color: blue;
+}
+    </Css>
+</PreviewContainer>
+
+<PreviewContainer>
+    <Name>MenuItem</Name>
+    <SubName>Brightness</SubName>
+    <Example>
+        <div class="menu-items2 d-flex flex-row">
+            <MenuItem>Item1</MenuItem>
+            <MenuItem>Item2</MenuItem>
+            <MenuItem>Item3</MenuItem>
+            <MenuItem>Item4</MenuItem>
         </div>
-        <pre>
-&lt;FloatingContainer BackgroundColor="gray"
-    class="p-5" style="border-radius: 10px">
-    content
-&lt;/FloatingContainer>
-        </pre>
-    </div>
-</div>
+    </Example>
+    <Razor>
+&lt;div class="menu-items2 d-flex flex-row">
+    &lt;MenuItem>Item1&lt;/MenuItem>
+    &lt;MenuItem>Item2&lt;/MenuItem>
+    &lt;MenuItem>Item3&lt;/MenuItem>
+    &lt;MenuItem>Item4&lt;/MenuItem>
+&lt;/div>
+    </Razor>
+    <Css>
+.menu-items2 ::deep div {
+    border-radius: 0.25rem;
+    --bg-color: gray;
+    --hover-color: gray;
+    --hover-brightness: 0.9;
+}
+    </Css>
+</PreviewContainer>
 
-<h5>MenuContainer</h5>
-
-<div class="row">
-    <div class="preview-container">
-        <div class="example">
-            <MenuContainer class="d-flex" ItemBackgroundColor="blue">
-                <MenuItem>menu item1</MenuItem>
-                <MenuItem>menu item2</MenuItem>
-                <MenuItem>menu item3</MenuItem>
-            </MenuContainer>
+<PreviewContainer>
+    <Name>UnderscoredMenuItem</Name>
+    <Example>
+        <div class="menu-items3 d-flex flex-row">
+            <UnderscoredMenuItem>Item1</UnderscoredMenuItem>
+            <UnderscoredMenuItem>Item2</UnderscoredMenuItem>
+            <UnderscoredMenuItem>Item3</UnderscoredMenuItem>
+            <UnderscoredMenuItem>Item4</UnderscoredMenuItem>
         </div>
-        <pre>
-&lt;MenuContainer class="d-flex" ItemBackgroundColor="blue">
-    &lt;MenuItem>menu item1&lt;/MenuItem>
-    &lt;MenuItem>menu item2&lt;/MenuItem>
-    &lt;MenuItem>menu item3&lt;/MenuItem>
-&lt;/MenuContainer>
-        </pre>
-    </div>
+    </Example>
+    <Razor>
+&lt;div class="menu-items3 d-flex flex-row">
+    &lt;UnderscoredMenuItem>Item1&lt;/UnderscoredMenuItem>
+    &lt;UnderscoredMenuItem>Item2&lt;/UnderscoredMenuItem>
+    &lt;UnderscoredMenuItem>Item3&lt;/UnderscoredMenuItem>
+    &lt;UnderscoredMenuItem>Item4&lt;/UnderscoredMenuItem>
+&lt;/div>
+    </Razor>
+    <Css>
+.menu-items3 ::deep div {
+    border-radius: 0.25rem;
+    --hover-color: red;
+}
+    </Css>
+</PreviewContainer>
 
-    <div class="preview-container">
-        <div class="example">
-            <MenuContainer 
-                    ItemBackgroundColor="blue"
-                    ItemHoverColor="gray"
-                    TextColor="white"
-                    ItemClass="rounded-3"
-                    ItemStyle="border: 3px solid black"
-                           class="rounded d-flex p-2"
-                    style="background-color:burlywood">
-                <MenuItem>menu item1</MenuItem>
-                <MenuItem>menu item2</MenuItem>
-                <MenuItem style="color:darkblue">menu item3</MenuItem>
-            </MenuContainer>
-        </div>
-        <pre>
-&lt;MenuContainer 
-        ItemBackgroundColor="blue"
-        ItemHoverColor="gray"
-        TextColor="white"
-        ItemClass="rounded-3"
-        ItemStyle="border: 3px solid black"
-        class="rounded d-flex p-2"
-        style="background-color:burlywood">
-    &lt;MenuItem>menu item1&lt;/MenuItem>
-    &lt;MenuItem>menu item2&lt;/MenuItem>
-    &lt;MenuItem style="color:darkblue">menu item3&lt;/MenuItem>
-&lt;/MenuContainer>
-        </pre>
-    </div>
-</div>
-
-<div class="row">
-    <div class="preview-container">
-        <div class="example">
-            <MenuContainer class="d-flex" ItemHoverColor="red">
-                <UnderscoredMenuItem>menu item1</UnderscoredMenuItem>
-                <UnderscoredMenuItem>menu item2</UnderscoredMenuItem>
-                <UnderscoredMenuItem>menu item3</UnderscoredMenuItem>
-            </MenuContainer>
-        </div>
-        <pre>
-&lt;MenuContainer class="d-flex" ItemHoverColor="red">
-    &lt;UnderscoredMenuItem>menu item1&lt;/UnderscoredMenuItem>
-    &lt;UnderscoredMenuItem>menu item2&lt;/UnderscoredMenuItem>
-    &lt;UnderscoredMenuItem>menu item3&lt;/UnderscoredMenuItem>
-&lt;/MenuContainer>
-        </pre>
-    </div>
-
-    <div class="preview-container">
-        <div class="example">
-            <MenuContainer ItemBackgroundColor="blue"
-                           ItemHoverColor="gray"
-                           TextColor="white"
-                           ItemClass="rounded-3"
-                           ItemStyle="border: 3px solid black"
-                           class="rounded d-flex p-2"
-                           style="background-color:burlywood">
-                <UnderscoredMenuItem>menu item1</UnderscoredMenuItem>
-                <UnderscoredMenuItem>menu item2</UnderscoredMenuItem>
-                <UnderscoredMenuItem style="background-color:darkblue">menu item3</UnderscoredMenuItem>
-            </MenuContainer>
-        </div>
-        <pre>
-&lt;MenuContainer ItemBackgroundColor="blue"
-           ItemHoverColor="gray"
-           TextColor="white"
-           ItemClass="rounded-3"
-           ItemStyle="border: 3px solid black"
-           class="rounded d-flex p-2"
-           style="background-color:burlywood">
-    &lt;UnderscoredMenuItem>menu item1&lt;/UnderscoredMenuItem>
-    &lt;UnderscoredMenuItem>menu item2&lt;/UnderscoredMenuItem>
-    &lt;UnderscoredMenuItem style="background-color:darkblue">menu item3&lt;/UnderscoredMenuItem>
-&lt;/MenuContainer>
-        </pre>
-    </div>
-</div>
-
-<h5>DropDown</h5>
-
-<div class="row">
-    <div class="preview-container">
-        <div class="example">
+<PreviewContainer>
+    <Name>DropDown</Name>
+    <SubName>Styled</SubName>
+    <Example>
+        <div class="dropdown-menu1">
             <DropDown>
                 <Head>
-                    Click
+                    <button class="btn btn-primary">click</button>
                 </Head>
                 <Content>
-                    Content
+                    <div class="menu-items3">
+                        <UnderscoredMenuItem>drop item1</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item2</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item3</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item4</UnderscoredMenuItem>
+                    </div>
                 </Content>
             </DropDown>
         </div>
-        <pre>
-&lt;DropDown>
-    &lt;Head>
-        Click
-    &lt;/Head>
-    &lt;Content>
-        Content
-    &lt;/Content>
-&lt;/DropDown>
-        </pre>
-    </div>
+    </Example>
+    <Razor>
+&lt;div class="dropdown-menu1">
+    &lt;DropDown>
+        &lt;Head>
+            &lt;button class="btn btn-primary">click&lt;/button>
+        &lt;/Head>
+        &lt;Content>
+            &lt;div class="menu-items3">
+                &lt;UnderscoredMenuItem>drop item1&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item2&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item3&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item4&lt;/UnderscoredMenuItem>
+            &lt;/div>
+        &lt;/Content>
+    &lt;/DropDown>
+&lt;/div>
+    </Razor>
+    <Css>
+.menu-items3 ::deep div {
+    border-radius: 0.25rem;
+    --hover-color: red;
+}
 
-    <div class="preview-container">
-        <div class="example">
-            <DropDown Alignment="right">
+.dropdown-menu1 ::deep .dropdown-content {
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.2);
+    padding: 0.25rem;
+}
+    </Css>
+</PreviewContainer>
+
+                <PreviewContainer>
+    <Name>DropDown</Name>
+    <SubName>Styled Right</SubName>
+    <Example>
+        <div class="dropdown-menu2">
+            <DropDown>
                 <Head>
-                    <button class="btn btn-primary">Click button</button>
+                    <button class="btn btn-primary">click</button>
                 </Head>
                 <Content>
-                    <FloatingContainer BackgroundColor="darkkhaki" class="rounded">
-                        <MenuContainer ItemHoverColor="blue">
-                            <UnderscoredMenuItem>list item1 list item1</UnderscoredMenuItem>
-                            <UnderscoredMenuItem>list item2 list item2</UnderscoredMenuItem>
-                            <UnderscoredMenuItem>list item3 list item3</UnderscoredMenuItem>
-                        </MenuContainer>
-                    </FloatingContainer>
+                    <div class="menu-items3">
+                        <UnderscoredMenuItem>drop item1</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item2</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item3</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item4</UnderscoredMenuItem>
+                    </div>
                 </Content>
             </DropDown>
         </div>
-        <pre>
-&lt;DropDown Alignment="right">
-    &lt;Head>
-        &lt;button class="btn btn-primary">Click button&lt;/button>
-    &lt;/Head>
-    &lt;Content>
-        &lt;FloatingContainer BackgroundColor="darkkhaki" class="rounded">
-            &lt;MenuContainer ItemHoverColor="blue">
-                &lt;UnderscoredMenuItem>list item1 list item1&lt;/UnderscoredMenuItem>
-                &lt;UnderscoredMenuItem>list item2 list item2&lt;/UnderscoredMenuItem>
-                &lt;UnderscoredMenuItem>list item3 list item3&lt;/UnderscoredMenuItem>
-            &lt;/MenuContainer>
-        &lt;/FloatingContainer>
-    &lt;/Content>
-&lt;/DropDown>
-        </pre>
-    </div>
-</div>
+    </Example>
+    <Razor>
+&lt;div class="dropdown-menu2">
+    &lt;DropDown>
+        &lt;Head>
+            &lt;button class="btn btn-primary">click&lt;/button>
+        &lt;/Head>
+        &lt;Content>
+            &lt;div class="menu-items3">
+                &lt;UnderscoredMenuItem>drop item1&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item2&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item3&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item4&lt;/UnderscoredMenuItem>
+            &lt;/div>
+        &lt;/Content>
+    &lt;/DropDown>
+&lt;/div>
+    </Razor>
+    <Css>
+.dropdown-menu2 ::deep .dropdown-content {
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.2);
+    padding: 0.25rem;
 
-<h5>HoverDown</h5>
+    right: 0;
 
-<div class="row">
-    <div class="preview-container">
-        <div class="example">
+}
+    </Css>
+</PreviewContainer>
+
+<PreviewContainer>
+    <Name>HoverDrop</Name>
+    <SubName>Styled</SubName>
+    <Example>
+        <div class="dropdown-menu1">
             <HoverDrop>
                 <Head>
-                    MouseOver
+                    <button class="btn btn-primary">hover</button>
                 </Head>
                 <Content>
-                    Content
+                    <div class="menu-items3">
+                        <UnderscoredMenuItem>drop item1</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item2</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item3</UnderscoredMenuItem>
+                        <UnderscoredMenuItem>drop item4</UnderscoredMenuItem>
+                    </div>
                 </Content>
             </HoverDrop>
         </div>
-        <pre>
-&lt;HoverDrop>
-    &lt;Head>
-        MouseOver
-    &lt;/Head>
-    &lt;Content>
-        Content
-    &lt;/Content>
-&lt;/&lt;HoverDrop>
-        </pre>
-    </div>
+    </Example>
+    <Razor>
+&lt;div class="dropdown-menu1">
+    &lt;HoverDrop>
+        &lt;Head>
+            &lt;button class="btn btn-primary">click&lt;/button>
+        &lt;/Head>
+        &lt;Content>
+            &lt;div class="menu-items3">
+                &lt;UnderscoredMenuItem>drop item1&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item2&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item3&lt;/UnderscoredMenuItem>
+                &lt;UnderscoredMenuItem>drop item4&lt;/UnderscoredMenuItem>
+            &lt;/div>
+        &lt;/Content>
+    &lt;/HoverDrop>
+&lt;/div>
+    </Razor>
+    <Css>
+.menu-items3 ::deep div {
+    border-radius: 0.25rem;
+    --hover-color: red;
+}
 
-    <div class="preview-container">
-        <div class="example">
-            <HoverDrop Alignment="right">
-                <Head>
-                    <button class="btn btn-primary">MouseOver</button>
-                </Head>
-                <Content>
-                    <FloatingContainer BackgroundColor="darkkhaki" class="rounded m-1 me-0">
-                        <MenuContainer ItemHoverColor="blue">
-                            <UnderscoredMenuItem>list item1 list item1</UnderscoredMenuItem>
-                            <UnderscoredMenuItem>list item2 list item2</UnderscoredMenuItem>
-                            <UnderscoredMenuItem>list item3 list item3</UnderscoredMenuItem>
-                        </MenuContainer>
-                    </FloatingContainer>
-                </Content>
-            </HoverDrop>
-        </div>
-        <pre>
-&lt;HoverDrop Alignment="right">
-    &lt;Head>
-        &lt;button class="btn btn-primary">MouseOver&lt;/button>
-    &lt;/Head>
-    &lt;Content>
-        &lt;FloatingContainer BackgroundColor="darkkhaki" class="rounded m-1 me-0">
-            &lt;MenuContainer ItemHoverColor="blue">
-                &lt;UnderscoredMenuItem>list item1 list item1&lt;/UnderscoredMenuItem>
-                &lt;UnderscoredMenuItem>list item2 list item2&lt;/UnderscoredMenuItem>
-                &lt;UnderscoredMenuItem>list item3 list item3&lt;/UnderscoredMenuItem>
-            &lt;/MenuContainer>
-        &lt;/FloatingContainer>
-    &lt;/Content>
-&lt;/HoverDrop>
-        </pre>
-    </div>
-</div>
-
+.dropdown-menu1 ::deep .dropdown-content {
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.2);
+    padding: 0.25rem;
+}
+    </Css>
+</PreviewContainer>

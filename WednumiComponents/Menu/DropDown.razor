@@ -1,15 +1,13 @@
-﻿@using WednumiComponents.Menu.Containers
-
-<div class="dropdown">
+﻿<div class="dropdown">
     @if (Head is not null)
     {
-        <div @onclick="HeadClick">
+        <div @onclick="ToggleVisibility">
             @Head        
         </div>
     }
     @if (Content is not null)
     {
-        <div class="@Visivility dropdown-content" style="right: @RightCss">
+        <div class="@Visivility dropdown-content">
             @Content
         </div>
     }
@@ -24,21 +22,7 @@
     [Parameter]
     public RenderFragment? Content { get; set; }
 
-    [Parameter]
-    public string? Alignment { get; set; }
-
-    protected int RightCss
-    {
-        get
-        {
-            var value = Alignment == "right"
-                ? 0
-                : 1;
-            return value;
-        }
-    }
-
-    protected void HeadClick()
+    protected void ToggleVisibility()
     {
         Visivility = Visivility == ""
             ? "showed"

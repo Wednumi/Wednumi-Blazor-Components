@@ -3,40 +3,16 @@
 @if (ChildContent is not null)
 {
     <div @attributes="InputAttributes" 
-        style="
-            --bg-color : @BackgroundColor;
-            --hover-color: @CheckedHoverColor;
-            --hover-brightness: @Brightness;
-            color: @TextColor; 
-            @GeneralStyle; 
-            @IndividualStyle"
-        class="
-            @GeneralClass
-            @IndividualClass"
-        @onclick="NavigateIfLinkPassed">
+            class="@ActiveCss @IndividualClass"
+            @onclick="OnClick"
+            @onmouseover="Activate"
+            @onmouseout="DeActivate">
         @ChildContent
     </div>
 }
 
 @code {
-    [Parameter]
-    public RenderFragment? ChildContent { get; set; }
-
-    [Parameter(CaptureUnmatchedValues = true)]
-    public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
-
-    [Parameter]
-    [CascadingParameter(Name = "BackgroundColor")]
-    public string? BackgroundColor { get; set; }
-
-    [CascadingParameter(Name = "HoverColor")]
-    public string? HoverColor { get; set; }
-
-    [CascadingParameter(Name = "TextColor")]
-    public string? TextColor { get; set; }
-
-    [CascadingParameter(Name = "Class")]
-    public string? GeneralClass { get; set; }
+    protected string ActiveCss = "";
 
     protected object? IndividualClass
     {
@@ -49,39 +25,30 @@
         }
     }
 
-    [CascadingParameter(Name = "Style")]
-    public string? GeneralStyle { get; set; }
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
 
-    protected object? IndividualStyle {
-        get{
-            var style = InputAttributes.ContainsKey("style")
-                ? InputAttributes["style"]
-                : null;
-            return style;
-        }
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
+
+    protected virtual void OnClick(){
+        NavigateIfLinkPassed();
     }
 
-    protected string Brightness{
-        get{
-            if(HoverColor is null){
-                return "0.85";
-            }
-            else{
-                return "1";
-            }
-        }
-    }
-
-    protected string CheckedHoverColor{
-        get{
-            return HoverColor ?? BackgroundColor!;
-        }
-    }
-
-    protected void NavigateIfLinkPassed(){
-        if (InputAttributes.ContainsKey("href")){
+    protected void NavigateIfLinkPassed()
+    {
+        if (InputAttributes.ContainsKey("href"))
+        {
             NavigationManager.NavigateTo((string)InputAttributes["href"], true);
-        }            
+        }
+    }
+
+    protected void Activate(){
+        ActiveCss = "active";
+    }
+
+    protected void DeActivate(){
+        ActiveCss = "";
     }
 }
 

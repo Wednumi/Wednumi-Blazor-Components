@@ -2,17 +2,11 @@
 
 @if (ChildContent is not null)
 {
-    <div @attributes="InputAttributes" 
-        style="
-            --text-color: @TextColor;
-            --hover-color: @HoverColor;
-            background-color: @BackgroundColor;
-            @GeneralStyle; 
-            @IndividualStyle"
-        class="
-            @GeneralClass
-            @IndividualClass"
-        @onclick="NavigateIfLinkPassed">
+    <div @attributes="InputAttributes"
+            class="@ActiveCss @IndividualClass"
+            @onclick="OnClick"
+            @onmouseover="Activate"
+            @onmouseout="DeActivate">
         @ChildContent
     </div>
 }

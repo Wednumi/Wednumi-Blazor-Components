@@ -1,0 +1,48 @@
+﻿.preview-container {
+    display: flex;
+    justify-content: space-between;
+    border: cadetblue solid;
+    border-width: 0.25rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.name {
+    font-size: 1.5rem;
+    color: aliceblue;
+    background-color: cornflowerblue;
+    border-radius: 0.25rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: inline-block;
+}
+
+.sub-name {
+    background-color: darkslategrey;
+}
+
+.language-label {
+    display: inline;
+    font-size: 1.25rem;
+    color: aliceblue;
+    background-color: darkslategray;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+.code {
+    border-radius: 5px;
+    padding: 1rem;
+    height: auto;
+    margin-left: 1rem;
+}
+
+.code-razor {
+    background-color: lightgray;
+    width: 40vw;
+}
+
+.code-css {
+    background-color: mediumspringgreen;
+    width: 20vw;
+}
