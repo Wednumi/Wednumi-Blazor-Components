@@ -1,0 +1,67 @@
+﻿@page "/lists"
+
+<div class="similar-components">
+    <ul>
+        <li>PickList</li>
+        <li class="css-classes">.list .item</li>
+    </ul>
+</div>
+
+<PreviewContainer>
+    <Name>PickList</Name>
+    <Example>
+        @_picked
+        <PickList Collection="_collection" 
+            NamePropExpression="s => s.Name"
+            PickAction="Pick" 
+            ShowSearch=true/>        
+    </Example>
+    <Razor>
+@@_picked
+&lt;PickList Collection="_collection"
+    NamePropExpression="s => s.Name"
+    PickAction="Pick"
+    ShowSearch=true/>
+    </Razor>
+    <Cs>
+private class ToShow
+{
+    public string Name { get; set; }
+}
+
+private List&lt;ToShow> _collection;
+
+private void Pick(ToShow toShow)
+{
+    _picked = toShow.Name;
+    StateHasChanged();
+}
+    </Cs>
+</PreviewContainer>
+
+@code{
+    private class ToShow
+    {
+        public string Name { get; set; }
+
+        public ToShow(string name)
+        {
+            Name = name;
+        }
+    }
+
+    private List<ToShow> _collection = new()
+    {
+        new ToShow("first"),
+        new ToShow("second"),
+        new ToShow("third"),
+    };
+
+    private string _picked = "Choose item";
+
+    private void Pick(ToShow toShow)
+    {
+        _picked = toShow.Name;
+        StateHasChanged();
+    }
+}

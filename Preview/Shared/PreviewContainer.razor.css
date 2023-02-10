@@ -28,6 +28,7 @@
     background-color: darkslategray;
     border-radius: 0.25rem;
     padding: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .code {
@@ -39,10 +40,15 @@
 
 .code-razor {
     background-color: lightgray;
-    width: 40vw;
+    width: 30vw;
 }
 
 .code-css {
     background-color: mediumspringgreen;
-    width: 20vw;
+    width: 30vw;
+}
+
+.code-cs {
+    background-color: mediumaquamarine;
+    width: 30vw;
 }

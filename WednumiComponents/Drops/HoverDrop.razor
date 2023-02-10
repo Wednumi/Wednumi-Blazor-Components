@@ -1,0 +1,48 @@
+﻿@inherits ClickDrop
+
+<div class="dropdown" @onmouseover="Show" @onmouseout="Hide">
+    @if (Head is not null)
+    {
+        <div class="drop-head" @onclick="ToggleVisibility">
+            @Head
+        </div>
+    }
+    @if (Content is not null)
+    {
+        <div class="@Visibility dropdown-content">
+            @Content
+        </div>
+    }
+</div>
+
+@code {
+    private bool _mouseOver = false;
+
+    protected void Show()
+    {
+        _ = DelayedMouseOver(500, true);
+    }
+
+    protected void Hide()
+    {
+        _ = DelayedMouseOver(500, false);
+    }
+
+    private async Task DelayedMouseOver(int delay, bool mouseOver)
+    {
+        _mouseOver = mouseOver;
+        await Task.Delay(delay);
+        if(_mouseOver == mouseOver)
+        {
+            SetVisibilityCss();
+            StateHasChanged();
+        }
+    }
+
+    private void SetVisibilityCss()
+    {
+        Visibility = _mouseOver
+            ? "drop-showed"
+            : "";
+    }
+}

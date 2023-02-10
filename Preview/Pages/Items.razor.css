@@ -1,0 +1,24 @@
+﻿.items1 ::deep .item {
+    border-radius: 0.25rem;
+    --bg-color: gray;
+    --hover-color: red;
+}
+
+.some-item1 ::deep .item {
+    --bg-color: blue;
+}
+
+.items2 ::deep .item {
+    border-radius: 0.25rem;
+    --bg-color: gray;
+    --hover-color: gray;
+    --hover-brightness: 0.9;
+}
+
+.no-border ::deep .item {
+    border: 0;
+}
+
+.items3 ::deep .item {
+    --hover-color: red;
+}

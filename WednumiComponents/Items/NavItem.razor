@@ -1,0 +1,33 @@
+﻿@inherits Item
+
+@inject NavigationManager NavigationManager
+
+@if (ChildContent is not null)
+{
+    <div @attributes="InputAttributes" 
+            class="item @ActiveCss @ClassParameter"
+            @onclick="OnClickAsync"
+            @onmouseover="Activate"
+            @onmouseout="DeActivate">
+        @ChildContent
+    </div>
+}
+
+@code {
+    [Parameter]
+    public bool NavigationForceLoad { get; set; } = false;
+
+    protected async Task NavigateIfLinkPassedAsync()
+    {
+        if (InputAttributes.ContainsKey("href"))
+        {
+            await Task.Run(() => NavigationManager.NavigateTo((string)InputAttributes["href"], NavigationForceLoad));
+        }
+    }
+
+    protected async Task OnClickAsync()
+    {
+        await NavigateIfLinkPassedAsync();
+    }
+}
+

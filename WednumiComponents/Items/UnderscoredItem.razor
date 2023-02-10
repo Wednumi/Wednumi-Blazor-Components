@@ -1,12 +1,18 @@
-﻿@inherits MenuItem;
+﻿@inherits Item;
 
 @if (ChildContent is not null)
 {
     <div @attributes="InputAttributes"
-            class="@ActiveCss @IndividualClass"
-            @onclick="OnClick"
+            class="item @ActiveCss @ClassParameter"
             @onmouseover="Activate"
             @onmouseout="DeActivate">
         @ChildContent
     </div>
+}
+
+@code{
+    protected override void Activate()
+    {
+        ActiveCss = "active-hover";
+    }
 }

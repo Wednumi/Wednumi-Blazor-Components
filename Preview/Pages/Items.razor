@@ -1,0 +1,125 @@
+﻿@page "/items"
+
+<div class="similar-components">
+    <ul>
+        <li>Item</li>
+        <li>InputItem</li>
+        <li>NavItem</li>
+        <li class="css-classes">.item .active-bg</li>
+        <li>UnderscoredItem</li>
+        <li>UnderscoredNavItem</li>
+        <li class="css-classes">.item .active-hover</li>
+    </ul>
+</div>
+
+<PreviewContainer>
+    <Name>Item</Name>
+    <SubName>Color</SubName>
+    <Example>
+        <div class="items1 d-flex flex-row">
+            <span class="some-item1">
+                <Item>Item1</Item>
+            </span>
+            <Item>Item2</Item>
+            <Item>Item3</Item>
+            <Item>Item4</Item>
+        </div>
+    </Example>
+    <Razor>
+&lt;div class="items1 d-flex flex-row">
+    &lt;span class="some-item1">
+        &lt;Item>Item1&lt;/Item>
+    &lt;/span>
+    &lt;Item>Item2&lt;/Item>
+    &lt;Item>Item3&lt;/Item>
+    &lt;Item>Item4&lt;/Item>
+&lt;/div>
+    </Razor>
+    <Css>
+.items1 ::deep .item {
+    border-radius: 0.25rem;
+    --bg-color: gray;
+    --hover-color: red;
+}
+
+.some-item1 ::deep .item{
+    --bg-color: blue;
+}
+    </Css>
+</PreviewContainer>
+
+<PreviewContainer>
+    <Name>Item</Name>
+    <SubName>Brightness</SubName>
+    <Example>
+        <div class="items2 d-flex flex-row">
+            <Item>Item1</Item>
+            <Item>Item2</Item>
+            <Item>Item3</Item>
+            <Item>Item4</Item>
+        </div>
+    </Example>
+    <Razor>
+&lt;div class="items2 d-flex flex-row">
+    &lt;Item>Item1&lt;/Item>
+    &lt;Item>Item2&lt;/Item>
+    &lt;Item>Item3&lt;/Item>
+    &lt;Item>Item4&lt;/Item>
+&lt;/div>
+    </Razor>
+    <Css>
+.items2 ::deep .item {
+    border-radius: 0.25rem;
+    --bg-color: gray;
+    --hover-color: gray;
+    --hover-brightness: 0.9;
+}
+    </Css>
+</PreviewContainer>
+
+<PreviewContainer>
+    <Name>UnderscoredItem</Name>
+    <SubName>Basic</SubName>
+    <Example>
+        <div class="d-flex flex-row">
+            <UnderscoredItem>Item1</UnderscoredItem>
+            <UnderscoredItem>Item2</UnderscoredItem>
+            <UnderscoredItem>Item3</UnderscoredItem>
+            <UnderscoredItem>Item4</UnderscoredItem>
+        </div>
+    </Example>
+    <Razor>
+&lt;div class="d-flex flex-row">
+    &lt;UnderscoredItem>Item1&lt;/UnderscoredItem>
+    &lt;UnderscoredItem>Item2&lt;/UnderscoredItem>
+    &lt;UnderscoredItem>Item3&lt;/UnderscoredItem>
+    &lt;UnderscoredItem>Item4&lt;/UnderscoredItem>
+&lt;/div>
+    </Razor>
+</PreviewContainer>
+
+<PreviewContainer>
+    <Name>UnderscoredItem</Name>
+    <SubName>Colored</SubName>
+    <Example>
+        <div class="items3 d-flex flex-row">
+            <UnderscoredItem>Item1</UnderscoredItem>
+            <UnderscoredItem>Item2</UnderscoredItem>
+            <UnderscoredItem>Item3</UnderscoredItem>
+            <UnderscoredItem>Item4</UnderscoredItem>
+        </div>
+    </Example>
+    <Razor>
+&lt;div class="items3 d-flex flex-row">
+    &lt;UnderscoredItem>Item1&lt;/UnderscoredItem>
+    &lt;UnderscoredItem>Item2&lt;/UnderscoredItem>
+    &lt;UnderscoredItem>Item3&lt;/UnderscoredItem>
+    &lt;UnderscoredItem>Item4&lt;/UnderscoredItem>
+&lt;/div>
+    </Razor>
+    <Css>
+.items3 ::deep .item {
+    --hover-color: red;
+}
+    </Css>
+</PreviewContainer>
