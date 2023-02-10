@@ -1,0 +1,86 @@
+﻿@page "/drops"
+
+<div class="similar-components">
+    <ul>
+        <li>ClickDrop</li>
+        <li>HoverDrop</li>
+        <li class="css-classes">
+            <div>
+                .dropdown .drop-head
+            </div>
+            <div>
+                .dropdown-content .drop-showed
+            </div>
+        </li>
+    </ul>
+</div>
+
+<PreviewContainer>
+    <Name>
+        ClickDrop
+    </Name>
+    <Example>
+        <ClickDrop>
+            <Head>
+                <button class="btn btn-primary">click</button>
+            </Head>
+            <Content>
+                <div class="bg-secondary px-5">
+                    <div>line</div>
+                    <div>line</div>
+                    <div>line</div>
+                </div>
+            </Content>
+        </ClickDrop>
+        <div>some text some text some text</div>
+    </Example>
+    <Razor>
+&lt;ClickDrop>
+    &lt;Head>
+        &lt;button class="btn btn-primary">click&lt;/button>
+    &lt;/Head>
+    &lt;Content>
+        &lt;div class="bg-secondary px-5">
+            &lt;div>line&lt;/div>
+            &lt;div>line&lt;/div>
+            &lt;div>line&lt;/div>
+        &lt;/div>
+    &lt;/Content>
+&lt;/ClickDrop>
+    </Razor>
+</PreviewContainer>
+
+<PreviewContainer>
+    <Name>
+        HoverDrop
+    </Name>
+    <Example>
+        <HoverDrop>
+            <Head>
+                <button class="btn btn-primary">click</button>
+            </Head>
+            <Content>
+                <div class="bg-secondary px-5">
+                    <div>line</div>
+                    <div>line</div>
+                    <div>line</div>
+                </div>
+            </Content>
+        </HoverDrop>
+        <div>some text some text some text</div>
+    </Example>
+    <Razor>
+&lt;HoverDrop>
+    &lt;Head>
+        &lt;button class="btn btn-primary">click&lt;/button>
+    &lt;/Head>
+    &lt;Content>
+        &lt;div class="bg-secondary px-5">
+            &lt;div>line&lt;/div>
+            &lt;div>line&lt;/div>
+            &lt;div>line&lt;/div>
+        &lt;/div>
+    &lt;/Content>
+&lt;/HoverDrop>
+    </Razor>
+</PreviewContainer>

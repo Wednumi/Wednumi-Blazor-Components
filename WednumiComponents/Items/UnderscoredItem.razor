@@ -1,0 +1,18 @@
+﻿@inherits Item;
+
+@if (ChildContent is not null)
+{
+    <div @attributes="InputAttributes"
+            class="item @ActiveCss @ClassParameter"
+            @onmouseover="Activate"
+            @onmouseout="DeActivate">
+        @ChildContent
+    </div>
+}
+
+@code{
+    protected override void Activate()
+    {
+        ActiveCss = "active-hover";
+    }
+}
