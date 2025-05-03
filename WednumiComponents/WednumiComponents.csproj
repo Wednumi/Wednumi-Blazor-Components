@@ -4,6 +4,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageId>WednumiComponents</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>Mykhailo Sereda</Authors>
+	<Company>Wednumi</Company>
+	<Description>My reusable Blazor components</Description>
   </PropertyGroup>
 
   <ItemGroup>
