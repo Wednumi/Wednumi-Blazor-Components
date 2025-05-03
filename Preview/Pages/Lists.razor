@@ -11,15 +11,15 @@
     <Name>PickList</Name>
     <Example>
         @_picked
-        <PickList Collection="_collection" 
-            NamePropExpression="s => s.Name"
+        <PickList Collection="_collection"
+                  ItemTitle="s => s.Name"
             PickAction="Pick" 
             ShowSearch=true/>        
     </Example>
     <Razor>
 @@_picked
 &lt;PickList Collection="_collection"
-    NamePropExpression="s => s.Name"
+        ItemTitle="s => s.Name"
     PickAction="Pick"
     ShowSearch=true/>
     </Razor>

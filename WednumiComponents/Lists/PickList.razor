@@ -15,7 +15,7 @@
     {
         @foreach (var item in _filtered)
         {
-            <Item @onclick="() => PickAsync(item)">@GetName(item)</Item>
+            <Item @onclick="() => PickAsync(item)">@ItemTitle(item)</Item>
         }
     }
 </div>
@@ -27,7 +27,7 @@
     {
         get
         {
-            return Collection.Where(i => GetName(i)
+            return Collection.Where(i => ItemTitle(i)
                 .Contains(_nameFilter, StringComparison.OrdinalIgnoreCase)).ToList();
         }
     }
@@ -36,7 +36,7 @@
     public List<TItem> Collection { get; set; }
 
     [Parameter]
-    public Expression<Func<TItem, string>> NamePropExpression { get; set; }
+    public Func<TItem, string> ItemTitle { get; set; }
 
     [Parameter]
     public Action<TItem>? PickAction { get; set; }
@@ -55,17 +55,5 @@
             await PickActionAsync(item);
         }
         _nameFilter = string.Empty;
-    }
-
-    private string GetName(TItem item)
-    {
-        var property = typeof(TItem).GetProperty(PropName());
-        return (string)property!.GetValue(item)!;
-    }
-
-    private string PropName()
-    {
-        MemberExpression body = (MemberExpression)NamePropExpression.Body;
-        return body.Member.Name;
     }
 }
